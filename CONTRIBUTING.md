@@ -1,0 +1,58 @@
+# Contributing
+
+When contributing to this repository, please first discuss the change you wish
+to make via issue, email, or any other method with the owners of this
+repository before making a change.
+
+## About the repository configuration
+
+1. Before you start your work, make sure to setup the repository
+   - This project uses git hooks with the help of [`pre-commit`](https://pre-commit.com/).
+     Make sure to have `pre-commit` installed and run `pre-commit install` to
+     install the git hooks. This can take some time as well as the first
+     commit. **NOTE**: This step is necessary for quality assurance.
+   - Optionally (but highly recommended) run `git config --local commit.gpgsign true`
+     to configure your local working copy of the repository to automatically
+     sign your work. Also add your e-mail address and public key to the [`allowed_signers`](./allowed_signers)
+     file so others can confirm your work locally. See also [Commit Signing](#commit-signing)
+     for more information.
+2. This repository is [Commitizen friendly](https://commitizen-tools.github.io/commitizen/)
+    - When you're done with your work and want to commit it either commit it
+      the usual way with `git commit` or use `cz commit`.
+    - If you've followed the first step and installed `pre-commit`, then `pre-commit`
+      will run all configured hooks. These will lint your commit message to
+      make sure it follows the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+      scheme. You can use Commitizen to assure this. Also it will run other
+      hooks to ensure consistent code style to catch problems with static
+      analysis.
+3. Do not push your changes directly to the main branch! Create a pull request
+   instead. After a code review by the project maintainer it will be considered
+   for contribution.
+4. Release and versioning are handled by the maintainer as well.
+
+### Commit Signing
+
+To make sure a commit is actually done by you and no one is impersonating you,
+`git` supports signing your work. This can be done either by using a `gpg` or
+`ssh` key. GitHub can verify a commit was actually made by you. The [GitHub Docs about Signing Commits](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits)
+and [this blog post by Git Tower about Setting Up SSH for Commit Signing](https://www.git-tower.com/blog/setting-up-ssh-for-commit-signing/)
+explain how to create a signing key and configure `git` to use this key for
+commit signing. Both articles tell you how to add the public key to GitHub so
+GitHub can approve your work.
+
+## Versioning
+
+This project uses the [SemVer versioning scheme](https://semver.org/). However,
+this is not the full truth. The actual release version is much more complex.
+The project itself uses semantic versioning for all sources tracked by git. The
+actual release version on the other hand has a prefix. This prefix is
+structured like `<fedora-version>.<texlive-version>`. Hereby will the
+placeholders be filled with the following information:
+
+- `<texlive-version>`: The Tex Live distribution version. E.g. at the time of
+  writing the most recent version available for Fedora was `2023-69`.
+- `<fedora-version>`: The Fedora version of the base image. E.g. at the time of
+  writing the most recent stable version available was `39`.
+
+This way it should be more transparent, if and more importantly why a new image
+version was released.

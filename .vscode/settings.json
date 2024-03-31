@@ -1,0 +1,75 @@
+{
+  "cSpell.allowCompoundWords": false,
+  "cSpell.enabled": true,
+  "cSpell.enabledLanguageIds": [
+    "dockerfile",
+    "git-commit",
+    "javascript",
+    "json",
+    "jsonc",
+    "markdown",
+    "plaintext",
+    "text",
+    "typescript",
+    "yaml",
+    "yml"
+  ],
+  "cSpell.ignorePaths": [
+    ".git",
+    ".vscode",
+  ],
+  "cSpell.language": "en-US",
+  "cSpell.languageSettings": [
+    {
+      "allowCompoundWords": false,
+      "dictionaries": [
+        "companies",
+        "misc",
+        "scientific-terms-us",
+        "softwareTerms",
+        "wordsEn"
+      ],
+      "languageId": "*",
+      "locale": "en-US"
+    },
+    {
+      "allowCompoundWords": true,
+      "dictionaries": [
+        "node",
+        "typescript"
+      ],
+      "languageId": "javascript",
+      "locale": "en-US"
+    },
+    {
+      "allowCompoundWords": true,
+      "dictionaries": [
+        "fonts",
+        "misc"
+      ],
+      "languageId": "jsonc",
+      "locale": "en-US"
+    },
+    {
+      "allowCompoundWords": true,
+      "dictionaries": [
+        "python",
+        "scientific-terms-us",
+        "softwareTerms"
+      ],
+      "languageId": "python",
+      "locale": "en-US"
+    }
+  ],
+  "cSpell.maxNumberOfProblems": 50,
+  "cSpell.minWordLength": 4,
+  "cSpell.numSuggestions": 5,
+  "gitlens.defaultDateLocale": "system",
+  "gitlens.defaultDateShortFormat": "YYYY-MM-DD",
+  "gitlens.defaultTimeFormat": "hh:mm",
+  "markdown.updateLinksOnFileMove.enabled": "prompt",
+  "markdown.validate.enabled": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  }
+}

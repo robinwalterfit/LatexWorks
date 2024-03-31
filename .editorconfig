@@ -1,0 +1,58 @@
+# Top-most EditorConfig file
+# See: https://EditorConfig.org
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Configuration files specific file configuration
+[*.{cfg,ini,toml}]
+indent_size = 2
+indent_style = space
+insert_final_newline = false
+
+# Dockerfile specific file configuration
+[*Dockerfile*]
+indent_size = 4
+indent_style = space
+insert_final_newline = false
+
+# JavaScript/TypeScript/JSON specific file configuration
+[*.{cjs,js,json,jsx,mjs,ts,tsx}]
+indent_size = 2
+indent_style = space
+
+# LaTeX specific file configuration
+[*.{bib,cls,pgf,tex,sty}]
+indent_size = 4
+indent_style = space
+
+# Makefile specific file configuration
+[Makefile*]
+indent_style = tab
+
+# Markdown specific file configuration
+[*.{md,mdx}]
+indent_size = 4
+indent_style = space
+trim_trailing_whitespace = false
+
+# Python specific file configuration
+[*.{ipynb,py}]
+indent_size = 4
+indent_style = space
+
+# Shell specific file configuration
+[*.sh]
+indent_size = 4
+indent_style = tab
+
+# YAML specific settings:
+[*.{yaml,yml}]
+indent_size = 2
+indent_style = space
+insert_final_newline = true
