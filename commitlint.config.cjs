@@ -10,6 +10,7 @@ module.exports = {
         'docker',
         'editor',
         'git',
+        'github',
         'linter',
         'README',
         'vscode'

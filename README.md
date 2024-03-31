@@ -9,17 +9,20 @@
   <b><a href="./wiki/Quickstart">Getting Started</a></b> | <b><a href="https://github.com/robinwalterfit/LatexWorks">GitHub</a></b>
   <br/><br/>
   <a href="https://commitizen-tools.github.io/commitizen/">
-    <img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square" alt="Commitizen friendly">
+    <img alt="Commitizen friendly" src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square" />
   </a>
   <a href="https://conventionalcommits.org">
-    <img src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=flat-square" alt="Conventional Commits">
+    <img alt="Conventional Commits" src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=flat-square" />
   </a>
-  <img src="https://img.shields.io/badge/License-MIT%20or%20Apache%202-green.svg?logo=opensourceinitiative&amp;logoColor=FFFFFF&amp;style=flat-square" alt="License MIT or Apache-2.0">
+  <img alt="License MIT or Apache-2.0" src="https://img.shields.io/badge/License-MIT%20or%20Apache%202-green.svg?logo=opensourceinitiative&amp;logoColor=FFFFFF&amp;style=flat-square" />
+  <a href="./.github/CODE_OF_CONDUCT.md">
+    <img alt="Contributor Covenant" src="https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg?style=flat-square" />
+  </a>
   <a href="https://github.com/pre-commit/pre-commit">
-    <img src="https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&amp;logoColor=white&amp;style=flat-square" alt="pre-commit">
+    <img alt="pre-commit" src="https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&amp;logoColor=white&amp;style=flat-square" />
   </a>
   <a href="https://github.com/robinwalterfit/LatexWorks">
-    <img src="https://img.shields.io/badge/website-LatexWorks-green.svg?style=flat-square" alt="website">
+    <img alt="website" src="https://img.shields.io/badge/website-LatexWorks-green.svg?style=flat-square" />
   </a>
 </p>
 
