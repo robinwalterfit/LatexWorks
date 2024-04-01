@@ -35,6 +35,7 @@
   - [Installation](#installation)
     - [Download and Copy](#download-and-copy)
     - [Git Submodule](#git-submodule)
+  - [Usage](#usage)
 - [Development](#development)
   - [Build the Project](#build-the-project)
   - [Deployment](#deployment)
@@ -107,6 +108,36 @@ git submodule add https://github.com/robinwalterfit/LatexWorks.git
 
 This will install the repository under a new subdirectory `LatexWorks`. You can
 then `cd` into this directory and run the command from [Build the Project](#build-the-project).
+
+### Usage
+
+The image provides a custom entrypoint. In order to use the image, all you have
+to do is running `docker run`. Most likely you will want to use `latexmk` to
+compile your document. However, you must provide some arguments to the run
+command otherwise the compilation won't work. The only necessary arguments are
+the volume mount to mount your document sources into the container and the
+workspace directory. You should also provide information about your local user,
+otherwise the compiled document will belong to `root`.
+
+Run the following command from the root of your project directory:
+
+```bash
+docker run -e PUID=$(id -u) -e PGID=$(id -g) --rm -v "${PWD}:/workspace" -w "/workspace" robinwalterfit/latexworks:<scheme>-<fedora-version>-<project-version> latexmk [options] [file ...]
+# Or: use docker `--user` argument
+docker run --rm --user $(id -u) -v "${PWD}:/workspace" -w "/workspace" robinwalterfit/latexworks:<scheme>-<fedora-version>-<project-version> latexmk [options] [file ...]
+```
+
+This will mount your project directory to `/workspace` and tell docker use this
+directory as the workspace folder. The `--rm` flag tells docker to remove the
+container as soon as it has finished execution. The environment variables
+`PUID` and `PGID` will make sure to drop privileges as well as the `--user`
+option and that all commands in the container use the same user id as your
+local user.
+
+If you make use of `latexmkrc` files, then you should make sure they can be
+found by `latexmk`. Either add a `.latexmkrc` file to the root of your project
+or provide them as an option to the command. But remember: all files not part
+of project must be mounted into the container!
 
 **[⬆️ Back to Top](#latexworks)**
 
