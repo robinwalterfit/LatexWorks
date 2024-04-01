@@ -1,0 +1,10 @@
+ignored:
+  - DL3008  # Pin versions in apt-get install
+  - DL3013  # Pin versions in pip install.
+  - DL3040  # `dnf clean all` missing after dnf command. => Cache is managed by the BUILDKIT feature
+  - DL3041  # Specify version with `dnf install -y <package>-<version>`.
+  - DL4000  # MAINTAINER is deprecated => Still used in base image, so we want to overwrite it
+
+trustedRegistries:
+  - "docker.io"
+  - "*.ghcr.io"

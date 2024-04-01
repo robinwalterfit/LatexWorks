@@ -46,13 +46,7 @@ This project uses the [SemVer versioning scheme](https://semver.org/). However,
 this is not the full truth. The actual release version is much more complex.
 The project itself uses semantic versioning for all sources tracked by git. The
 actual release version on the other hand has a prefix. This prefix is
-structured like `<fedora-version>.<texlive-version>`. Hereby will the
-placeholders be filled with the following information:
-
-- `<texlive-version>`: The Tex Live distribution version. E.g. at the time of
-  writing the most recent version available for Fedora was `2023-69`.
-- `<fedora-version>`: The Fedora version of the base image. E.g. at the time of
-  writing the most recent stable version available was `39`.
+the currently used version of Fedora.
 
 This way it should be more transparent, if and more importantly why a new image
 version was released.

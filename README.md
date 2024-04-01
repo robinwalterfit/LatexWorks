@@ -33,6 +33,8 @@
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
+    - [Download and Copy](#download-and-copy)
+    - [Git Submodule](#git-submodule)
 - [Development](#development)
   - [Build the Project](#build-the-project)
   - [Deployment](#deployment)
@@ -74,7 +76,37 @@ won't be able to build the new images.
 
 ### Installation
 
-TODO(hello@robinwalter.me): Add installation instructions as soon as the first image version is published.
+Currently, these images aren't deployed anywhere ([see Deployment for more information](#deployment)).
+This means you have to build an image yourself. Some guidance on how to achieve
+this will follow:
+
+#### Download and Copy
+
+The most obvious way would be to just download the `Dockerfile` and run the
+command from [Build the Project](#build-the-project). Keep in mind you have to
+download the `docker-entrypoint.sh` file as well. Otherwise you have to modify
+the `Dockerfile`.
+
+Either use the download buttons from the GitHub web application or use e.g.
+`curl`.
+
+```bash
+curl -OL https://raw.githubusercontent.com/robinwalterfit/LatexWorks/main/Dockerfile
+curl -OL https://raw.githubusercontent.com/robinwalterfit/LatexWorks/main/docker-entrypoint.sh
+```
+
+#### Git Submodule
+
+An alternative way would be to add this repository as a `git` submodule. This
+way it will be easier to upgrade when a new release of this repository was
+published and you will keep in mind where to look for more information.
+
+```bash
+git submodule add https://github.com/robinwalterfit/LatexWorks.git
+```
+
+This will install the repository under a new subdirectory `LatexWorks`. You can
+then `cd` into this directory and run the command from [Build the Project](#build-the-project).
 
 **[⬆️ Back to Top](#latexworks)**
 
@@ -96,9 +128,12 @@ hand. All commands follow this scheme:
 
 ```bash
 docker buildx build \
-    --build-arg TEXLIVE=texlive-scheme-<scheme>-<texlive-version> \
+    --build-arg CREATED=$(date -u +"%Y-%m-%dT%H:%M:%SZ") \
+    --build-arg FEDORA_VERSION=39 \  # Optional
     --build-arg REVISION=$(git log -n 1 --format=%H) \
-    -t <user/org>/latexworks:<scheme>-<fedora-version>.<texlive-version>-<project-version>
+    --build-arg TEXLIVE=texlive-scheme-<scheme> \
+    --build-arg VERSION=<project-version> \
+    -t <user/org>/latexworks:<scheme>-<fedora-version>-<project-version>
     [-t ...]  # Additional tags may be provided
     .  # Context: CWD
 ```
@@ -127,8 +162,6 @@ There are some placeholders used in this command. Let's break this down:
     recommended packages to scheme-basic.
   - `tetex`: TeX Live scheme nearly equivalent to the teTeX distribution that
     was maintained by Thomas Esser.
-- `<texlive-version>`: The Tex Live distribution version. E.g. at the time of
-  writing the most recent version available for Fedora was `2023-69`.
 - `<user/org>`: The user or organization identifier.
 - `<fedora-version>`: The Fedora version of the base image. E.g. at the time of
   writing the most recent stable version available was `39`.
@@ -142,7 +175,13 @@ information on how to install additional packages in smaller images.
 
 ### Deployment
 
-TODO(hello@robinwalter.me): Add deployment instructions as soon as the first image version is published.
+Currently none of these images will be deployed to any public registry. Main
+reason for this is the size of the images. Even the `minimal` scheme image has
+a size of ~2GB. This will definitely exceed [GitHub's Packages Quota](https://docs.github.com/en/billing/managing-billing-for-github-packages/about-billing-for-github-packages).
+
+However, this doesn't mean you can't use this project. It simply implies a
+simple `docker pull ...` won't be enough. [See the installation instructions](#installation)
+for more information on how to use $\LaTeX$Works.
 
 ### Customization
 
