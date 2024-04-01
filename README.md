@@ -133,8 +133,8 @@ docker buildx build \
     --build-arg REVISION=$(git log -n 1 --format=%H) \
     --build-arg TEXLIVE=texlive-scheme-<scheme> \
     --build-arg VERSION=<project-version> \
-    -t <user/org>/latexworks:<scheme>-<fedora-version>-<project-version>
-    [-t ...]  # Additional tags may be provided
+    -t <user/org>/latexworks:<scheme>-<fedora-version>-<project-version> \
+    [-t ... ] \  # Additional tags may be provided
     .  # Context: CWD
 ```
 
