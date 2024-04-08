@@ -42,12 +42,16 @@ LABEL org.opencontainers.image.authors="Robin Walter <hello@robinwalter.me>" \
 # See: https://docs.docker.com/build/guide/mounts/
 # and: https://docs.docker.com/reference/dockerfile/#run
 # as well as: https://github.com/moby/buildkit/issues/1673
+# We set the option `keepcache=True` to tell DNF to keep all downloaded packages in the cache even
+# after a successfull installation. This should speed up building the image, since the packages
+# don't necessarily need to be redownloaded.
 RUN --mount=type=cache,id=latexworks-dnf,target=/var/cache/dnf,sharing=locked,mode=0755 \
     --mount=type=cache,id=latexworks-dnf-lists,target=/var/lib/dnf,sharing=locked,mode=0755 \
-    dnf install --assumeyes \
+    dnf install --assumeyes --setopt=install_weak_deps=False --setopt=keepcache=True \
         "${TEXLIVE}" \
         latexmk \
         texlive-chktex \
+        texlive-texcount \
         # Install additional useful tools
         bash \
         curl \
