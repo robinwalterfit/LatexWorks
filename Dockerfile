@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 # Define Build Arguments
 ARG CREATED
-ARG FEDORA_VERSION=39
+ARG FEDORA_VERSION=40
 ARG REVISION
 ARG TEXLIVE
 ARG VERSION

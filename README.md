@@ -160,7 +160,7 @@ hand. All commands follow this scheme:
 ```bash
 docker buildx build \
     --build-arg CREATED=$(date -u +"%Y-%m-%dT%H:%M:%SZ") \
-    --build-arg FEDORA_VERSION=39 \  # Optional
+    --build-arg FEDORA_VERSION=40 \  # Optional
     --build-arg REVISION=$(git log -n 1 --format=%H) \
     --build-arg TEXLIVE=texlive-scheme-<scheme> \
     --build-arg VERSION=<project-version> \
@@ -195,7 +195,7 @@ There are some placeholders used in this command. Let's break this down:
     was maintained by Thomas Esser.
 - `<user/org>`: The user or organization identifier.
 - `<fedora-version>`: The Fedora version of the base image. E.g. at the time of
-  writing the most recent stable version available was `39`.
+  writing the most recent stable version available was `40`.
 - `<project-version>`: This project itself uses [SemVer](https://semver.org/)
   as versioning scheme. This version should be added to the tag since there
   could be new releases while the Fedora and TeX Live versions stay the same.
