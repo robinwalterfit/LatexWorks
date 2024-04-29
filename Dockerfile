@@ -7,15 +7,6 @@ ARG TEXLIVE
 ARG VERSION
 # Declare the BASE IMAGES - we probably won't use a multi-stage build, but it's a good practice anyway
 FROM docker.io/library/fedora:${FEDORA_VERSION} AS base
-# --------------------------------------------------------------------------- #
-FROM base
-# Ensure Build Arguments are still available
-ARG CREATED
-ARG FEDORA_VERSION=39
-ARG REVISION
-ARG TEXLIVE
-ARG VERSION
-
 # Set environment variables
 ENV PIP_CACHE_DIR=/var/cache/buildkit/pip
 
@@ -36,6 +27,15 @@ LABEL org.opencontainers.image.authors="Robin Walter <hello@robinwalter.me>" \
       org.opencontainers.image.url="https://github.com/robinwalterfit/LatexWorks" \
       org.opencontainers.image.vendor="Robin Walter" \
       org.opencontainers.image.version="${VERSION}"
+
+# --------------------------------------------------------------------------- #
+FROM base AS latexworks
+# Ensure Build Arguments are still available
+ARG CREATED
+ARG FEDORA_VERSION=39
+ARG REVISION
+ARG TEXLIVE
+ARG VERSION
 
 # Install TeX Live
 # Cache Mounts
