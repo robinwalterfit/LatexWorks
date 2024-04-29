@@ -40,6 +40,7 @@
   - [Build the Project](#build-the-project)
   - [Deployment](#deployment)
   - [Customization](#customization)
+  - [Devcontainer](#devcontainer)
 - [Contributing](#contributing)
 - [Links](#links)
 - [Licenses](#licenses)
@@ -164,6 +165,7 @@ docker buildx build \
     --build-arg REVISION=$(git log -n 1 --format=%H) \
     --build-arg TEXLIVE=texlive-scheme-<scheme> \
     --build-arg VERSION=<project-version> \
+    --target latexworks \  # Comes before the `devcontainer` stage, so make sure to add this target!
     -t <user/org>/latexworks:<scheme>-<fedora-version>-<project-version> \
     [-t ... ] \  # Additional tags may be provided
     .  # Context: CWD
@@ -221,6 +223,34 @@ using a bigger image with a different scheme is not desirable, then the
 installation should be done in the container. This however, is not persistent.
 To make it persistent, a new image should be created that uses the `small`
 image as its base image.
+
+**[⬆️ Back to Top](#latexworks)**
+
+### Devcontainer
+
+The standard image isn't optimized for the usage as a Devcontainer. This is why
+an additional stage called `devcontainer` was introduced. The `devcontainer`
+stage uses the `latexworks` stage as its base layer. This way a devcontainer
+will inherit all functionality from the $\LaTeX$Works image, but also include
+everything necessary to create a devcontainer. One very important thing is the
+user mapping. Make note of the additional build arguments. Also make sure to
+put your code into `/workspace` inside the container.
+
+```bash
+docker buildx build \
+    --build-arg CREATED=$(date -u +"%Y-%m-%dT%H:%M:%SZ") \
+    --build-arg FEDORA_VERSION=40 \  # Optional
+    --build-arg REVISION=$(git log -n 1 --format=%H) \
+    --build-arg TEXLIVE=texlive-scheme-<scheme> \
+    --build-arg USER_GID="$(id -g)" \
+    --build-arg USER_UID="$(id -u)" \
+    --build-arg USERNAME="$(id -un)" \
+    --build-arg VERSION=<project-version> \
+    --target devcontainer \  # Could be omitted
+    -t <user/org>/latexworks-devcontainer:<scheme>-<fedora-version>-<project-version> \
+    [-t ... ] \  # Additional tags may be provided
+    .  # Context: CWD
+```
 
 **[⬆️ Back to Top](#latexworks)**
 
