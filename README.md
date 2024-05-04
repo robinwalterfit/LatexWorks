@@ -240,6 +240,10 @@ put your code into `/workspace` inside the container.
 docker buildx build \
     --build-arg CREATED=$(date -u +"%Y-%m-%dT%H:%M:%SZ") \
     --build-arg FEDORA_VERSION=40 \  # Optional
+    --build-arg HADOLINT_VERSION=2.12.0 \  # Optional
+    --build-arg LTEX_LS_VERSION=15.2.0 \  # Optional
+    --build-arg PYENV_VERSION=2.3.24 \  # Optional
+    --build-arg PYTHON_VERSION=3.10.6 \  # Optional
     --build-arg REVISION=$(git log -n 1 --format=%H) \
     --build-arg TEXLIVE=texlive-scheme-<scheme> \
     --build-arg USER_GID="$(id -g)" \

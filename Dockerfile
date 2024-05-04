@@ -85,6 +85,7 @@ FROM latexworks AS devcontainer
 ARG CREATED
 ARG FEDORA_VERSION=40
 ARG HADOLINT_VERSION=2.12.0
+ARG LTEX_LS_VERSION=15.2.0
 ARG PYENV_VERSION=2.3.24
 ENV PYTHON_BUILD_CACHE_PATH=/var/cache/buildkit/python-build
 ENV PYTHON_BUILD_HTTP_CLIENT=curl
@@ -157,7 +158,14 @@ WORKDIR /tmp
 RUN --mount=type=tmpfs,target=/tmp \
     curl --location --remote-name "https://github.com/hadolint/hadolint/releases/download/v${HADOLINT_VERSION}/hadolint-Linux-$(if test "$(uname -m)" = 'x86_64'; then printf 'x86_64'; else printf 'arm64'; fi)" && \
     mv hadolint-Linux-* /usr/local/bin/hadolint && \
-    chmod +x /usr/local/bin/hadolint
+    chmod +x /usr/local/bin/hadolint && \
+# Install LTeX Language Server
+    curl --location --remote-name "https://github.com/valentjn/ltex-ls/releases/download/${LTEX_LS_VERSION}/ltex-ls-${LTEX_LS_VERSION}.tar.gz" && \
+    tar --extract --file "ltex-ls-${LTEX_LS_VERSION}.tar.gz" && \
+    mv "ltex-ls-${LTEX_LS_VERSION}" "/usr/local/bin/ltex-ls"
+
+# Set the JAVA_HOME environment variable
+ENV JAVA_HOME="$(dirname $(dirname $(readlink $(readlink $(which java)))))"
 
 WORKDIR /
 
