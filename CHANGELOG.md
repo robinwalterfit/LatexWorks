@@ -1,3 +1,9 @@
+## v0.3.0 (2024-05-04)
+
+### Feat
+
+- **docker**: install LTeX language server for spell checking of LaTeX files with LanguageTool
+
 ## v0.2.0 (2024-04-29)
 
 ### Feat
