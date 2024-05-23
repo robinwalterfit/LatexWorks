@@ -115,6 +115,7 @@ RUN --mount=type=cache,id=latexworks-devcontainer-dnf,target=/var/cache/dnf,shar
         man \
         man-pages \
         nano \
+        pipx \
         procps-ng \
         shellcheck \
         sqlite \
@@ -171,6 +172,8 @@ WORKDIR /
 
 USER $USERNAME
 
+# Add pip user installed packages to PATH
+ENV PATH="/home/${USERNAME}/.local/bin:${PATH}"
 # Install required Python version via pyenv
 RUN --mount=type=cache,id=latexworks-devcontainer-pyenv,target=$PYTHON_BUILD_CACHE_PATH,sharing=shared,mode=0755,uid=$USER_UID,gid=$USER_GID \
     eval "$(pyenv init --path)" && \
@@ -178,9 +181,16 @@ RUN --mount=type=cache,id=latexworks-devcontainer-pyenv,target=$PYTHON_BUILD_CAC
         PYTHON_CFLAGS='-march=native -mtune=native' && \
     pyenv install "${PYTHON_VERSION}" && \
     pyenv global "${PYTHON_VERSION}" && \
-    pyenv rehash
-
-# Add pip user installed packages to PATH
-ENV PATH="/home/${USERNAME}/.local/bin:${PATH}"
+    pyenv rehash && \
+# Install Poetry (https://python-poetry.org/)
+    pipx ensurepath && \
+    pipx install poetry && \
+# Configure Poetry
+    poetry config installer.modern-installation true && \
+    poetry config installer.parallel true && \
+    poetry config solver.lazy-wheel true && \
+    poetry config virtualenvs.create true && \
+    poetry config virtualenvs.in-project true && \
+    poetry config virtualenvs.prefer-active-python true
 
 WORKDIR /workspace
