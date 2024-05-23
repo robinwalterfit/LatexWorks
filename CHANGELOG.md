@@ -1,3 +1,9 @@
+## v0.4.0 (2024-05-23)
+
+### Feat
+
+- **docker**: add the python package manager poetry to the devcontainer stage
+
 ## v0.3.0 (2024-05-04)
 
 ### Feat
