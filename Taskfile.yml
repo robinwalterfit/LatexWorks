@@ -15,6 +15,7 @@ vars:
 
 tasks:
   build:
+    internal: true
     desc: Build the image for the current platform
     summary: |
       Build the image for the current platform.
@@ -23,18 +24,6 @@ tasks:
       only build the image for the current platform. This image will only be tagged with the user /
       organisation identifier and the image name. The tag will be `local`.
     deps: []
-    vars:
-      FEDORA_VERSION: 40
-      # The scheme can be one of:
-      # - basic
-      # - context
-      # - full
-      # - gust
-      # - medium
-      # - minimal
-      # - small
-      # - tetex
-      SCHEME: medium
     cmds:
       - |
         docker buildx build \
@@ -46,8 +35,123 @@ tasks:
           --target latexworks \
           --tag {{.ORG}}/{{.NAME}}:{{.SCHEME}}-{{.FEDORA_VERSION}}-local \
           .
+    vars:
+      FEDORA_VERSION: 40
+
+  build-basic:
+    aliases: ["build:basic"]
+    desc: Build the image for the current platform - TeX Live Scheme BASIC
+    summary: |
+      Build the image for the current platform - TeX Live Scheme BASIC.
+
+      The Docker Image will be built with Buildkit. However, for performance reasons this task will
+      only build the image for the current platform. This image will only be tagged with the user /
+      organisation identifier and the image name. The tag will be `local`.
+    cmds:
+      - task: build
+        vars:
+          SCHEME: basic
+
+  build-context:
+    aliases: ["build:context"]
+    desc: Build the image for the current platform - TeX Live Scheme CONTEXT
+    summary: |
+      Build the image for the current platform - TeX Live Scheme CONTEXT.
+
+      The Docker Image will be built with Buildkit. However, for performance reasons this task will
+      only build the image for the current platform. This image will only be tagged with the user /
+      organisation identifier and the image name. The tag will be `local`.
+    cmds:
+      - task: build
+        vars:
+          SCHEME: context
+
+  build-full:
+    aliases: ["build:full"]
+    desc: Build the image for the current platform - TeX Live Scheme FULL
+    summary: |
+      Build the image for the current platform - TeX Live Scheme FULL.
+
+      The Docker Image will be built with Buildkit. However, for performance reasons this task will
+      only build the image for the current platform. This image will only be tagged with the user /
+      organisation identifier and the image name. The tag will be `local`.
+    cmds:
+      - task: build
+        vars:
+          SCHEME: full
+
+  build-gust:
+    aliases: ["build:gust"]
+    desc: Build the image for the current platform - TeX Live Scheme GUST
+    summary: |
+      Build the image for the current platform - TeX Live Scheme GUST.
+
+      The Docker Image will be built with Buildkit. However, for performance reasons this task will
+      only build the image for the current platform. This image will only be tagged with the user /
+      organisation identifier and the image name. The tag will be `local`.
+    cmds:
+      - task: build
+        vars:
+          SCHEME: gust
+
+  build-medium:
+    aliases: ["build:medium"]
+    desc: Build the image for the current platform - TeX Live Scheme MEDIUM
+    summary: |
+      Build the image for the current platform - TeX Live Scheme MEDIUM.
+
+      The Docker Image will be built with Buildkit. However, for performance reasons this task will
+      only build the image for the current platform. This image will only be tagged with the user /
+      organisation identifier and the image name. The tag will be `local`.
+    cmds:
+      - task: build
+        vars:
+          SCHEME: medium
+
+  build-minimal:
+    aliases: ["build:minimal"]
+    desc: Build the image for the current platform - TeX Live Scheme MINIMAL
+    summary: |
+      Build the image for the current platform - TeX Live Scheme MINIMAL.
+
+      The Docker Image will be built with Buildkit. However, for performance reasons this task will
+      only build the image for the current platform. This image will only be tagged with the user /
+      organisation identifier and the image name. The tag will be `local`.
+    cmds:
+      - task: build
+        vars:
+          SCHEME: minimal
+
+  build-small:
+    aliases: ["build:small"]
+    desc: Build the image for the current platform - TeX Live Scheme SMALL
+    summary: |
+      Build the image for the current platform - TeX Live Scheme SMALL.
+
+      The Docker Image will be built with Buildkit. However, for performance reasons this task will
+      only build the image for the current platform. This image will only be tagged with the user /
+      organisation identifier and the image name. The tag will be `local`.
+    cmds:
+      - task: build
+        vars:
+          SCHEME: small
+
+  build-tetex:
+    aliases: ["build:tetex"]
+    desc: Build the image for the current platform - TeX Live Scheme TETEX
+    summary: |
+      Build the image for the current platform - TeX Live Scheme TETEX.
+
+      The Docker Image will be built with Buildkit. However, for performance reasons this task will
+      only build the image for the current platform. This image will only be tagged with the user /
+      organisation identifier and the image name. The tag will be `local`.
+    cmds:
+      - task: build
+        vars:
+          SCHEME: tetex
 
   build-devcontainer:
+    internal: true
     desc: Build the image for the current platform as Dev Container target
     summary: |
       Build the image for the current platform as Dev Container target.
@@ -59,28 +163,6 @@ tasks:
       The target will be the `devcontainer` stage. This image will be optimized for the usage with a
       Dev Container.
     deps: []
-    vars:
-      FEDORA_VERSION: 40
-      HADOLINT_VERSION: 2.12.0
-      LTEX_LS_VERSION: 15.2.0
-      PYENV_VERSION: 2.3.24
-      PYTHON_VERSION: 3.10.6
-      # The scheme can be one of:
-      # - basic
-      # - context
-      # - full
-      # - gust
-      # - medium
-      # - minimal
-      # - small
-      # - tetex
-      SCHEME: medium
-      USER_GID:
-        sh: id -g
-      USER_UID:
-        sh: id -u
-      USERNAME:
-        sh: id -un
     cmds:
       - |
         docker buildx build \
@@ -96,6 +178,154 @@ tasks:
           --target devcontainer \
           --tag {{.ORG}}/{{.NAME}}-devcontainer:{{.SCHEME}}-{{.FEDORA_VERSION}}-local \
           .
+    vars:
+      FEDORA_VERSION: 40
+      HADOLINT_VERSION: 2.12.0
+      LTEX_LS_VERSION: 15.2.0
+      PYENV_VERSION: 2.3.24
+      PYTHON_VERSION: 3.10.6
+      USER_GID:
+        sh: id -g
+      USER_UID:
+        sh: id -u
+      USERNAME:
+        sh: id -un
+
+  build-devcontainer-basic:
+    aliases: ["build-devcontainer:basic"]
+    desc: Build the image for the current platform as Dev Container target - TeX Live Scheme BASIC
+    summary: |
+      Build the image for the current platform as Dev Container target - TeX Live Scheme BASIC.
+
+      The Docker Image will be built with Buildkit. However, for performance reasons this task will
+      only build the image for the current platform. This image will only be tagged with the user /
+      organisation identifier and the image name. The tag will be `local`.
+
+      The target will be the `devcontainer` stage. This image will be optimized for the usage with a
+      Dev Container.
+    cmds:
+      - task: build-devcontainer
+        vars:
+          SCHEME: basic
+
+  build-devcontainer-context:
+    aliases: ["build-devcontainer:context"]
+    desc: Build the image for the current platform as Dev Container target - TeX Live Scheme CONTEXT
+    summary: |
+      Build the image for the current platform as Dev Container target - TeX Live Scheme CONTEXT.
+
+      The Docker Image will be built with Buildkit. However, for performance reasons this task will
+      only build the image for the current platform. This image will only be tagged with the user /
+      organisation identifier and the image name. The tag will be `local`.
+
+      The target will be the `devcontainer` stage. This image will be optimized for the usage with a
+      Dev Container.
+    cmds:
+      - task: build-devcontainer
+        vars:
+          SCHEME: context
+
+  build-devcontainer-full:
+    aliases: ["build-devcontainer:full"]
+    desc: Build the image for the current platform as Dev Container target - TeX Live Scheme FULL
+    summary: |
+      Build the image for the current platform as Dev Container target - TeX Live Scheme FULL.
+
+      The Docker Image will be built with Buildkit. However, for performance reasons this task will
+      only build the image for the current platform. This image will only be tagged with the user /
+      organisation identifier and the image name. The tag will be `local`.
+
+      The target will be the `devcontainer` stage. This image will be optimized for the usage with a
+      Dev Container.
+    cmds:
+      - task: build-devcontainer
+        vars:
+          SCHEME: full
+
+  build-devcontainer-gust:
+    aliases: ["build-devcontainer:gust"]
+    desc: Build the image for the current platform as Dev Container target - TeX Live Scheme GUST
+    summary: |
+      Build the image for the current platform as Dev Container target - TeX Live Scheme GUST.
+
+      The Docker Image will be built with Buildkit. However, for performance reasons this task will
+      only build the image for the current platform. This image will only be tagged with the user /
+      organisation identifier and the image name. The tag will be `local`.
+
+      The target will be the `devcontainer` stage. This image will be optimized for the usage with a
+      Dev Container.
+    cmds:
+      - task: build-devcontainer
+        vars:
+          SCHEME: gust
+
+  build-devcontainer-medium:
+    aliases: ["build-devcontainer:medium"]
+    desc: Build the image for the current platform as Dev Container target - TeX Live Scheme MEDIUM
+    summary: |
+      Build the image for the current platform as Dev Container target - TeX Live Scheme MEDIUM.
+
+      The Docker Image will be built with Buildkit. However, for performance reasons this task will
+      only build the image for the current platform. This image will only be tagged with the user /
+      organisation identifier and the image name. The tag will be `local`.
+
+      The target will be the `devcontainer` stage. This image will be optimized for the usage with a
+      Dev Container.
+    cmds:
+      - task: build-devcontainer
+        vars:
+          SCHEME: medium
+
+  build-devcontainer-minimal:
+    aliases: ["build-devcontainer:minimal"]
+    desc: Build the image for the current platform as Dev Container target - TeX Live Scheme MINIMAL
+    summary: |
+      Build the image for the current platform as Dev Container target - TeX Live Scheme MINIMAL.
+
+      The Docker Image will be built with Buildkit. However, for performance reasons this task will
+      only build the image for the current platform. This image will only be tagged with the user /
+      organisation identifier and the image name. The tag will be `local`.
+
+      The target will be the `devcontainer` stage. This image will be optimized for the usage with a
+      Dev Container.
+    cmds:
+      - task: build-devcontainer
+        vars:
+          SCHEME: minimal
+
+  build-devcontainer-small:
+    aliases: ["build-devcontainer:small"]
+    desc: Build the image for the current platform as Dev Container target - TeX Live Scheme SMALL
+    summary: |
+      Build the image for the current platform as Dev Container target - TeX Live Scheme SMALL.
+
+      The Docker Image will be built with Buildkit. However, for performance reasons this task will
+      only build the image for the current platform. This image will only be tagged with the user /
+      organisation identifier and the image name. The tag will be `local`.
+
+      The target will be the `devcontainer` stage. This image will be optimized for the usage with a
+      Dev Container.
+    cmds:
+      - task: build-devcontainer
+        vars:
+          SCHEME: small
+
+  build-devcontainer-tetex:
+    aliases: ["build-devcontainer:tetex"]
+    desc: Build the image for the current platform as Dev Container target - TeX Live Scheme TETEX
+    summary: |
+      Build the image for the current platform as Dev Container target - TeX Live Scheme TETEX.
+
+      The Docker Image will be built with Buildkit. However, for performance reasons this task will
+      only build the image for the current platform. This image will only be tagged with the user /
+      organisation identifier and the image name. The tag will be `local`.
+
+      The target will be the `devcontainer` stage. This image will be optimized for the usage with a
+      Dev Container.
+    cmds:
+      - task: build-devcontainer
+        vars:
+          SCHEME: tetex
 
   changelog-entry:
     desc: Print the latest changelog entry
