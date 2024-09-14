@@ -1,0 +1,94 @@
+[package]
+changelog = "CHANGELOG.md"
+extra_changelog_sections = [
+  { types = ["major"], name = "❗️ Breaking Changes ❗" },
+  { types = ["minor"], name = "🚀 Features" },
+  { types = ["patch"], name = "🐛 Fixes" },
+]
+
+[github]
+owner = "robinwalterfit"
+repo = "LatexWorks"
+
+[[workflows]]
+help_text = "Print the changelog entry to the console"
+name = "changelog-entry"
+
+  [[workflows.steps]]
+  command = "echo 'This will be the changelog entry:\n\n$changelog'"
+  shell = true
+  type = "Command"
+  variables = { "$changelog" = "ChangelogEntry" }
+
+[[workflows]]
+help_text = "Create a new changeset entry"
+name = "document-change"
+
+  [[workflows.steps]]
+  type = "CreateChangeFile"
+
+[[workflows]]
+  help_text = "Get the current version of the project"
+  name = "get-version"
+
+  [[workflows.steps]]
+  command = "echo '$version'"
+  shell = true
+  type = "Command"
+  variables = { "$version" = "Version" }
+
+[[workflows]]
+help_text = "Create a new PR to prepare a release"
+name = "prepare-release"
+
+  [[workflows.steps]]
+  command = "git switch -c release/v$version"
+  shell = true
+  type = "Command"
+  variables = { "$version" = "Version" }
+
+  [[workflows.steps]]
+  allow_empty = true
+  type = "PrepareRelease"
+
+  [[workflows.steps]]
+  command = "echo '$version' > version.txt"
+  shell = true
+  type = "Command"
+  variables = { "$version" = "Version" }
+
+  [[workflows.steps]]
+  command = "git add version.txt"
+  shell = true
+  type = "Command"
+
+  [[workflows.steps]]
+  command = "git commit -m \"[ci skip] chore: prepare release v$version\""
+  shell = true
+  type = "Command"
+  variables = { "$version" = "Version" }
+
+  [[workflows.steps]]
+  command = "git push --set-upstream origin release/v$version"
+  shell = true
+  type = "Command"
+  variables = { "$version" = "Version" }
+
+  [[workflows.steps]]
+  base = "main"
+  type = "CreatePullRequest"
+
+  [workflows.steps.title]
+  template = "chore: prepare release v$version"
+  variables = { "$version" = "Version" }
+
+  [workflows.steps.body]
+  template = "This PR was created by Knope. Merging it will create a new release\n\n$changelog"
+  variables = { "$changelog" = "ChangelogEntry" }
+
+[[workflows]]
+help_text = "Create a new release when a PR is merged to main"
+name = "release"
+
+  [[workflows.steps]]
+  type = "Release"
