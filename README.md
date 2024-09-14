@@ -8,9 +8,6 @@
   <br/>
   <b><a href="./wiki/Quickstart">Getting Started</a></b> | <b><a href="https://github.com/robinwalterfit/LatexWorks">GitHub</a></b>
   <br/><br/>
-  <a href="https://commitizen-tools.github.io/commitizen/">
-    <img alt="Commitizen friendly" src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square" />
-  </a>
   <a href="https://conventionalcommits.org">
     <img alt="Conventional Commits" src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=flat-square" />
   </a>
@@ -18,11 +15,17 @@
   <a href="./.github/CODE_OF_CONDUCT.md">
     <img alt="Contributor Covenant" src="https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg?style=flat-square" />
   </a>
-  <a href="https://github.com/pre-commit/pre-commit">
-    <img alt="pre-commit" src="https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&amp;logoColor=white&amp;style=flat-square" />
+  <a href="https://docker.com">
+    <img alt="Docker" src="https://img.shields.io/badge/Docker-2496ED?logo=docker&amp;logoColor=white&amp;style=flat-square">
   </a>
-  <a href="https://github.com/robinwalterfit/LatexWorks">
-    <img alt="website" src="https://img.shields.io/badge/website-LatexWorks-green.svg?style=flat-square" />
+  <a href="https://github.com/evilmartians/lefthook">
+    <img alt="lefthook" src="https://img.shields.io/badge/lefthook-enabled-brightgreen?logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nNDAwJyBoZWlnaHQ9JzI3MicgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz48cGF0aCBmaWxsPScjRkYxRTFFJyBkPSdNMjU4IDI2Mi42TDE0OSAyMTBsLTcyLjQgMjIuM0w1IDE5Ny44bDc2LjctOTguNC0xMy4xLTI0LjVMMTEwLjggMzZsNjUuNC0yLjdMMjUxLjkgNSAzODYuNyAxNTAgMzIzIDI0Ni42eicvPjxwYXRoIGQ9J004My4yIDE2Ni44YzI4LjYgOC42IDU4LjUuNiA4OS45LTI0LjFsMTQ3IDk1LjItMzAgMTguNWgtNDlsLTc3LjUtMzguMi03MC44IDE4LTgwLjQtMzYuNkw2OS43IDE3MGwxMy41LTMuMnptNTItMTEyLjdjMTAuMy0yLjcgMzEuNyAyMi4zIDMyLjcgMjguNCAzLjggMjEuMiA1LjQgMzUuNS0yMC43IDU2LjRhNjkuOCA2OS44IDAgMCAxLTU2LjUgMTUuN2w1LjItMjMuM0w3NyA5My43YTk2LjYgOTYuNiAwIDAgMSA1OC4xLTM5LjZ6JyBmaWxsPScjQkYwMDAwJy8+PHBhdGggZD0nTTkwLjUgMjQzLjZsLTEuNy41TC4zIDIwNC4zbDItNC41YzE0LjEtMzIuNiAzNS02MS4yIDYyLjMtODUuOGEzNjAuNiAzNjAuNiAwIDAgMSAxMS44LTEwLjJsLTQuNi04LjctNS42LTEwLjUtMS44LTMuNS0xLjItMi4zIDEuMS0yLjNjMTIuMy0yNSAzMS41LTM5IDYyLjgtNDcuNSAxOS4xLTUgMzUuMS00LjcgNDggMS40QTI4Ny42IDI4Ny42IDAgMCAxIDI1MS4zLjdsMS0uMiAxNDQuNSAxNTUtMS42IDNhMzE4NCAzMTg0IDAgMCAxLTM3LjQgNzIuNmMtMTcuMyAzMi42LTQ2IDQ0LjQtODMuMyAzOS0yOC00LTU4LjUtMTctOTUtMzcuOGwtMTEtNi4xYy0xNi45IDIuNS00MyA4LjMtNzguMSAxNy40ek03MS4yIDEyMS41YTIzNy4yIDIzNy4yIDAgMCAwLTU3LjcgNzcuN2w2MS4yIDI3LjZhNTE3LjUgNTE3LjUgMCAwIDEgNjIuNS0xOC4zIDI3MjQ0LjggMjcyNDQuOCAwIDAgMC02My42LTM1LjZsLTQuNi0yLjYgMjMuMy0zNi41LTExLjEtMjFhMzUxLjIgMzUxLjIgMCAwIDAtMTAgOC43em0zNy4yIDQ4LjZoLjFjMzcuOC02LjcgNjcuNC0zNi43IDc4LTU1LjdhMjE0LjIgMjE0LjIgMCAwIDAgNS44LTkuMkwyNDQuMSAxM2EyNzQuOCAyNzQuOCAwIDAgMC03NC44IDMyLjRsLTEwLjgtNWEzNzcuMyAzNzcuMyAwIDAgMSA1LjQtMy40IDY4LjIgNjguMiAwIDAgMC0zNC4zIDEuOEMxMDIgNDYuMSA4NS40IDU4IDc0LjQgNzguN2wuNyAxLjIgNS41IDEwLjUgMTkuNiAzN2E1MC40IDUwLjQgMCAwIDAgMTkgLjJjOS42LTEuNCAxOC40LTUgMjUuNS0xMC43IDE0LjEtMTEuNCAyMS42LTIwIDIyLjItMjcuNi43LTktNS4yLTIxLjEtMjEuNy00NC4xIDIzLjMgMTUuNiAzOS4yIDQwLjYgMjYuNCA1OC42di4xYTU3IDU3IDAgMCAxLTQuMyA1LjZjLTQuMiA0LjgtOS4zIDkuNS0xNi4zIDE1LjJhNjMuNCA2My40IDAgMCAxLTMwLjMgMTIuOCA2NiA2NiAwIDAgMS0xOS4xLjNsLTE4LjUgMjlhMjgwNzQuNyAyODA3NC43IDAgMCAxIDQ5LjUgMjcuNnYtLjJjNTEtMi43IDg0LTMzLjYgMTE1LjktODQuMy0yNC40IDUxLjgtNTQuNiA4NS0xMDEuMiA5Mi44IDkuOCA1LjQgMTguNiAxMC40IDI2LjYgMTUgNTAtMy4zIDgwLjItMzAuNyAxMTEuOC04MC45LTI0LjEgNTEuMi01MS45IDgxLjQtOTcgODkuMmE1NTAuNyA1NTAuNyAwIDAgMCAxNC43IDggNzUgNzUgMCAwIDEtLjUtLjUgMjIyLjMgMjIyLjMgMCAwIDAgNS41IDMgNDEwIDQxMCAwIDAgMCA4LjMgNGM0OS44LTMuMiA3Ny42LTI3LjEgMTA5LjItNzcuMy0yMy4yIDQ5LjMtNDggNzYuNS04OS43IDg1IDMwLjUgOSA1NS4yIDMuNSA4MC0xMiA4LjUtNS41IDI4LjktMzQuNSA2MS04Ny4yTDI1My42IDE2LjQgMjAxIDExMC4yYTE3Mi45IDE3Mi45IDAgMCAxLTMwLjEgMzguNCA5NCA5NCAwIDAgMS02Mi40IDIxLjV6JyBmaWxsPScjM0MwMDAwJy8+PC9zdmc+&amp;style=flat-square" />
+  </a>
+  <a href="https://taskfile.dev/">
+    <img alt="Taskfile" src="https://img.shields.io/badge/Taskfile-29BEB0?logo=task&amp;logoColor=white&amp;style=flat-square">
+  </a>
+  <a href="https://github.com/robinwalterfit/LatexWorks/actions?query=workflow%3AMegaLinter+branch%3Amain">
+    <img alt="MegaLinter" src="https://img.shields.io/github/actions/workflow/status/robinwalterfit/LatexWorks/mega-linter.yml?branch=main&amp;event=push&amp;style=flat-square&amp;logo=github&amp;logoColor=white">
   </a>
 </p>
 
@@ -40,7 +43,7 @@
   - [Build the Project](#build-the-project)
   - [Deployment](#deployment)
   - [Customization](#customization)
-  - [Devcontainer](#devcontainer)
+  - [Dev Container](#dev-container)
 - [Contributing](#contributing)
 - [Links](#links)
 - [Licenses](#licenses)
@@ -63,8 +66,8 @@ with the following command. This for example will install the `beamer` class
 and `hyperref` package.
 
 ```bash
-sudo dnf install 'tex(beamer.cls)'
-sudo dnf install 'tex(hyperref.sty)'
+sudo dnf install --assumeyes 'tex(beamer.cls)'
+sudo dnf install --assumeyes 'tex(hyperref.sty)'
 ```
 
 ### Prerequisites
@@ -74,11 +77,11 @@ machine. You can find instructions on [how to install Docker for your platform](
 according the instructions from this link.
 
 Docker is also necessary if you want to extend these images. Otherwise you
-won't be able to build the new images.
+will not be able to build the new images.
 
 ### Installation
 
-Currently, these images aren't deployed anywhere ([see Deployment for more information](#deployment)).
+Currently, these images are not deployed anywhere ([see Deployment for more information](#deployment)).
 This means you have to build an image yourself. Some guidance on how to achieve
 this will follow:
 
@@ -93,8 +96,8 @@ Either use the download buttons from the GitHub web application or use e.g.
 `curl`.
 
 ```bash
-curl -OL https://raw.githubusercontent.com/robinwalterfit/LatexWorks/main/Dockerfile
-curl -OL https://raw.githubusercontent.com/robinwalterfit/LatexWorks/main/docker-entrypoint.sh
+curl --fail --location --remote-name 'https://raw.githubusercontent.com/robinwalterfit/LatexWorks/main/Dockerfile'
+curl --fail --location --remote-name 'https://raw.githubusercontent.com/robinwalterfit/LatexWorks/main/docker-entrypoint.sh'
 ```
 
 #### Git Submodule
@@ -104,7 +107,7 @@ way it will be easier to upgrade when a new release of this repository was
 published and you will keep in mind where to look for more information.
 
 ```bash
-git submodule add https://github.com/robinwalterfit/LatexWorks.git
+git submodule add --branch main https://github.com/robinwalterfit/LatexWorks.git
 ```
 
 This will install the repository under a new subdirectory `LatexWorks`. You can
@@ -115,7 +118,7 @@ then `cd` into this directory and run the command from [Build the Project](#buil
 The image provides a custom entrypoint. In order to use the image, all you have
 to do is running `docker run`. Most likely you will want to use `latexmk` to
 compile your document. However, you must provide some arguments to the run
-command otherwise the compilation won't work. The only necessary arguments are
+command otherwise the compilation will not work. The only necessary arguments are
 the volume mount to mount your document sources into the container and the
 workspace directory. You should also provide information about your local user,
 otherwise the compiled document will belong to `root`.
@@ -123,22 +126,25 @@ otherwise the compiled document will belong to `root`.
 Run the following command from the root of your project directory:
 
 ```bash
-docker run -e PUID=$(id -u) -e PGID=$(id -g) --rm -v "${PWD}:/workspace" -w "/workspace" robinwalterfit/latexworks:<scheme>-<fedora-version>-<project-version> latexmk [options] [file ...]
+docker run --env PUID="$(id -u)" --env PGID="$(id -g)" --interactive --rm --tty --volume "${PWD}:/workspace" --workdir '/workspace' robinwalterfit/latexworks:<scheme>-<fedora-version>-<project-version> latexmk [options] [file ...]
 # Or: use docker `--user` argument
-docker run --rm --user $(id -u) -v "${PWD}:/workspace" -w "/workspace" robinwalterfit/latexworks:<scheme>-<fedora-version>-<project-version> latexmk [options] [file ...]
+docker run --interactive --rm --tty --user "$(id -u)" --volume "${PWD}:/workspace" --workdir '/workspace' robinwalterfit/latexworks:<scheme>-<fedora-version>-<project-version> latexmk [options] [file ...]
 ```
 
-This will mount your project directory to `/workspace` and tell docker use this
-directory as the workspace folder. The `--rm` flag tells docker to remove the
-container as soon as it has finished execution. The environment variables
+This will mount your project directory to `/workspace` and tell docker to use
+this directory as the workspace folder. The `--rm` flag tells docker to remove
+the container as soon as it has finished execution. The environment variables
 `PUID` and `PGID` will make sure to drop privileges as well as the `--user`
 option and that all commands in the container use the same user id as your
-local user.
+local user. The flags `--interactive` and `--tty` are for interactive mode and
+to allocate a pseudo-TTY respectively. This is done, because `latexmk` works
+interactively by default. If you do not want to run interactively, you should
+use `-interaction=nonstopmode` option of `latexmk`.
 
 If you make use of `latexmkrc` files, then you should make sure they can be
 found by `latexmk`. Either add a `.latexmkrc` file to the root of your project
 or provide them as an option to the command. But remember: all files not part
-of project must be mounted into the container!
+of the project must be mounted into the container!
 
 **[⬆️ Back to Top](#latexworks)**
 
@@ -149,14 +155,13 @@ In order to extend the functionallity of the images you must follow the
 
 It is recommended to use [Visual Studio Code](https://code.visualstudio.com/)
 as editor. The repository recommends different VSCode extensions, however, none
-of them is required. It is up to you what extensions you use.
+of them are required. It is up to you what extensions you use.
 
 There is only one Dockerfile that is used for all images.
 
 ### Build the Project
 
-Currently, no fancy build tool is used. All build commands must be invoked by
-hand. All commands follow this scheme:
+All build commands follow this scheme:
 
 ```bash
 docker buildx build \
@@ -166,12 +171,12 @@ docker buildx build \
     --build-arg TEXLIVE=texlive-scheme-<scheme> \
     --build-arg VERSION=<project-version> \
     --target latexworks \  # Comes before the `devcontainer` stage, so make sure to add this target!
-    -t <user/org>/latexworks:<scheme>-<fedora-version>-<project-version> \
-    [-t ... ] \  # Additional tags may be provided
+    --tag <user/org>/latexworks:<scheme>-<fedora-version>-<project-version> \
+    [--tag ... ] \  # Additional tags may be provided
     .  # Context: CWD
 ```
 
-There are some placeholders used in this command. Let's break this down:
+There are some placeholders used in this command. Let us break this down:
 
 - `<scheme>`: The TeX Live distribution provides different installation
   schemes. The following schemes are available:
@@ -206,14 +211,18 @@ There are some placeholders used in this command. Let's break this down:
 installed directly. Checkout [customization](#customization) for more
 information on how to install additional packages in smaller images.
 
+However, [`task`](https://taskfile.dev/) can be used to build the images, too.
+There are many different tasks that can be found in [`Taskfile.yml`](./Taskfile.yml).
+To build a LatexWorks image just invoke one of the available tasks.
+
 ### Deployment
 
 Currently none of these images will be deployed to any public registry. Main
 reason for this is the size of the images. Even the `minimal` scheme image has
 a size of ~2GB. This will definitely exceed [GitHub's Packages Quota](https://docs.github.com/en/billing/managing-billing-for-github-packages/about-billing-for-github-packages).
 
-However, this doesn't mean you can't use this project. It simply implies a
-simple `docker pull ...` won't be enough. [See the installation instructions](#installation)
+However, this does not mean you cannot use this project. It simply implies a
+simple `docker pull ...` will not be enough. [See the installation instructions](#installation)
 for more information on how to use $\LaTeX$Works.
 
 ### Customization
@@ -226,13 +235,13 @@ image as its base image.
 
 **[⬆️ Back to Top](#latexworks)**
 
-### Devcontainer
+### Dev Container
 
-The standard image isn't optimized for the usage as a Devcontainer. This is why
+The standard image is not optimized for the usage as a Dev Container. This is why
 an additional stage called `devcontainer` was introduced. The `devcontainer`
-stage uses the `latexworks` stage as its base layer. This way a devcontainer
+stage uses the `latexworks` stage as its base layer. This way a dev container
 will inherit all functionality from the $\LaTeX$Works image, but also include
-everything necessary to create a devcontainer. One very important thing is the
+everything necessary to create a dev container. One very important thing is the
 user mapping. Make note of the additional build arguments. Also make sure to
 put your code into `/workspace` inside the container.
 
@@ -251,10 +260,12 @@ docker buildx build \
     --build-arg USERNAME="$(id -un)" \
     --build-arg VERSION=<project-version> \
     --target devcontainer \  # Could be omitted
-    -t <user/org>/latexworks-devcontainer:<scheme>-<fedora-version>-<project-version> \
-    [-t ... ] \  # Additional tags may be provided
+    --tag <user/org>/latexworks-devcontainer:<scheme>-<fedora-version>-<project-version> \
+    [--tag ... ] \  # Additional tags may be provided
     .  # Context: CWD
 ```
+
+There are tasks available to build a dev container image, too.
 
 **[⬆️ Back to Top](#latexworks)**
 
@@ -271,16 +282,19 @@ You want to contribute to $\LaTeX$Works? Great! Please make sure to read
 - Issues / Feature Requests: [https://github.com/robinwalterfit/LatexWorks/issues](https://github.com/robinwalterfit/LatexWorks/issues)
 - Wiki: [https://github.com/robinwalterfit/LatexWorks/wiki](https://github.com/robinwalterfit/LatexWorks/wiki)
 - Additional links:
+  - Codeowners Docs: [https://github.blog/2017-07-06-introducing-code-owners/](https://github.blog/2017-07-06-introducing-code-owners/)
   - Collection of `.gitattributes` templates: [https://github.com/gitattributes/gitattributes](https://github.com/gitattributes/gitattributes)
-  - Commitizen: [https://commitizen-tools.github.io/commitizen/](https://commitizen-tools.github.io/commitizen/)
-  - Commitlint: [https://commitlint.js.org/](https://commitlint.js.org/)
+  - Continue: [https://www.continue.dev/](https://www.continue.dev/)
+  - Contributor Covenant Code of Conduct: [https://www.contributor-covenant.org](https://www.contributor-covenant.org)
   - Conventional Commits: [https://www.conventionalcommits.org/en/v1.0.0/](https://www.conventionalcommits.org/en/v1.0.0/)
   - Docker: [https://www.docker.com/](https://www.docker.com/)
   - EditorConfig: [https://editorconfig.org/](https://editorconfig.org/)
   - `.gitignore` Generator: [https://gitignore.io](https://gitignore.io)
   - hadolint: [https://hadolint.github.io/hadolint/](https://hadolint.github.io/hadolint/)
-  - pre-commit: [https://pre-commit.com/](https://pre-commit.com/)
+  - Lefthook: [https://github.com/evilmartians/lefthook](https://github.com/evilmartians/lefthook)
+  - MegaLinter: [https://megalinter.io](https://megalinter.io)
   - README-Template.md: [https://gist.github.com/PurpleBooth/109311bb0361f32d87a2](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
+  - Taskfile: [https://taskfile.dev/](https://taskfile.dev/)
   - Visual Studio Code: [https://code.visualstudio.com/](https://code.visualstudio.com/)
 
 **[⬆️ Back to Top](#latexworks)**

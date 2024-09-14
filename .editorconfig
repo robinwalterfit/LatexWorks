@@ -22,7 +22,7 @@ indent_style = space
 insert_final_newline = false
 
 # JavaScript/TypeScript/JSON specific file configuration
-[*.{cjs,js,json,jsx,mjs,ts,tsx}]
+[*.{astro,cjs,d.cts,d.mts,js,json,jsonc,jsx,mjs,svelte,ts,tsx,vue}]
 indent_size = 2
 indent_style = space
 

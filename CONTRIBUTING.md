@@ -7,24 +7,18 @@ repository before making a change.
 ## About the repository configuration
 
 1. Before you start your work, make sure to setup the repository
-   - This project uses git hooks with the help of [`pre-commit`](https://pre-commit.com/).
-     Make sure to have `pre-commit` installed and run `pre-commit install` to
-     install the git hooks. This can take some time as well as the first
-     commit. **NOTE**: This step is necessary for quality assurance.
+   - This project uses git hooks with the help of [`lefthook`](https://github.com/evilmartians/lefthook).
+     Make sure to have `lefthook` installed and run `lefthook install` to
+     install the git hooks. **NOTE**: This step is necessary for quality
+     assurance.
    - Optionally (but highly recommended) run `git config --local commit.gpgsign true`
      to configure your local working copy of the repository to automatically
      sign your work. Also add your e-mail address and public key to the [`allowed_signers`](./allowed_signers)
      file so others can confirm your work locally. See also [Commit Signing](#commit-signing)
      for more information.
-2. This repository is [Commitizen friendly](https://commitizen-tools.github.io/commitizen/)
-    - When you're done with your work and want to commit it either commit it
-      the usual way with `git commit` or use `cz commit`.
-    - If you've followed the first step and installed `pre-commit`, then `pre-commit`
-      will run all configured hooks. These will lint your commit message to
-      make sure it follows the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
-      scheme. You can use Commitizen to assure this. Also it will run other
-      hooks to ensure consistent code style to catch problems with static
-      analysis.
+2. This repository uses [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+   Make sure to follow the pattern. You can use a tool like [`commitizen`](https://commitizen-tools.github.io/commitizen/)
+   to help you.
 3. Do not push your changes directly to the main branch! Create a pull request
    instead. After a code review by the project maintainer it will be considered
    for contribution.
