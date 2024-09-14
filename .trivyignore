@@ -1,0 +1,5 @@
+# 'dnf clean all' missing => Buildkit cache mounts are used, so there is no increase in image size
+AVD-DS-0019
+
+# No HEALTHCHECK defined => The image runs only on invocation or as a dev container, so there is no need for a health check
+AVD-DS-0026

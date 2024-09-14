@@ -1,0 +1,15 @@
+---
+# Configuration file for MegaLinter
+# See all available variables at https://megalinter.io/configuration/ and in linters documentation
+
+APPLY_FIXES: none
+
+FILTER_REGEX_EXCLUDE: '(\.github/workflows)'
+JSON_JSONLINT_FILTER_REGEX_EXCLUDE: '(\.vscode/)'
+MARKDOWN_FILTER_REGEX_EXCLUDE: 'LICENSE'
+SHOW_ELAPSED_TIME: true
+FLAVOR_SUGGESTIONS: false
+EMAIL_REPORTER: false
+FILEIO_REPORTER: false
+JSON_REPORTER: false
+GITHUB_STATUS_REPORTER: true
