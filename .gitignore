@@ -95,3 +95,21 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/linux,macos,windows,visualstudiocode
+
+### Lefthook ###
+# Local configuration file
+lefthook-local.json
+.lefthook-local.json
+lefthook-local.toml
+.lefthook-local.toml
+lefthook-local.yml
+.lefthook-local.yml
+lefthook-local.yaml
+.lefthook-local.yaml
+
+# Local configuration directory
+.lefthook-local/
+
+### Mega Linter ###
+# Reports
+megalinter-reports/
