@@ -13,7 +13,7 @@ export PUID=${PUID:-0}
 
 # Drop privileges (when asked to) if root, otherwise run as current user
 if [ "$(id -u)" == "0" ] && [ "${PUID}" != "0" ]; then
-	su -c "$0" "${PUID}" "$@"
+	su --command "$0" "${PUID}" "$@"
 else
 	exec "$@"
 fi
