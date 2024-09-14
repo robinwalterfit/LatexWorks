@@ -20,8 +20,6 @@ ENV PIP_CACHE_DIR=/var/cache/buildkit/pip
 # OCI image annotation
 # See: https://snyk.io/de/blog/how-and-when-to-use-docker-labels-oci-container-annotations/
 # and: https://github.com/opencontainers/image-spec/blob/main/annotations.md
-# Deprecated but for backward compatibility
-MAINTAINER "Robin Walter <hello@robinwalter.me>"
 LABEL org.opencontainers.image.authors="Robin Walter <hello@robinwalter.me>" \
       org.opencontainers.image.base.name="docker.io/library/fedora:${FEDORA_VERSION}" \
       org.opencontainers.image.created="${CREATED}" \
@@ -42,8 +40,6 @@ ARG FEDORA_VERSION=40
 ARG REVISION
 ARG TEXLIVE
 ARG VERSION
-
-MAINTAINER "Robin Walter <hello@robinwalter.me>"
 
 # Install TeX Live
 # Cache Mounts
@@ -98,7 +94,6 @@ ARG USERNAME=latexworks
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
-MAINTAINER "Robin Walter <hello@robinwalter.me>"
 LABEL org.opencontainers.image.description="A Docker Image that provides a LaTeX TeX Live (${TEXLIVE}) installation based on Fedora ${FEDORA_VERSION} to be used as a Devcontainer." \
       org.opencontainers.image.title="LatexWorks Devcontainer"
 
