@@ -1,4 +1,14 @@
 # Changelog
+## 1.0.0 (2024-09-14)
+
+### ❗️ Breaking Changes ❗
+
+- Since the whole release management is updated, we kick-off with a new version `v1.0.0`
+
+### 🚀 Features
+
+- add `lefthook`, `git-lfs` and make sure `java` is installed correctly
+
 ## 0.4.0 (2024-05-23)
 
 ### Feat
