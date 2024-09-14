@@ -42,14 +42,14 @@ help_text = "Create a new PR to prepare a release"
 name = "prepare-release"
 
   [[workflows.steps]]
+  allow_empty = true
+  type = "PrepareRelease"
+
+  [[workflows.steps]]
   command = "git switch -c release/v$version"
   shell = true
   type = "Command"
   variables = { "$version" = "Version" }
-
-  [[workflows.steps]]
-  allow_empty = true
-  type = "PrepareRelease"
 
   [[workflows.steps]]
   command = "echo '$version' > version.txt"
