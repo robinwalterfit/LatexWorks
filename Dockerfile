@@ -124,6 +124,7 @@ RUN --mount=type=cache,id=latexworks-devcontainer-dnf,target=/var/cache/dnf,shar
         nano \
         pipx \
         procps-ng \
+        ripgrep \
         shellcheck \
         sqlite \
         sqlite-devel \
