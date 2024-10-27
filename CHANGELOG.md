@@ -1,4 +1,15 @@
 # Changelog
+## 1.1.0 (2024-10-27)
+
+### ❗️ Breaking Changes ❗
+
+- Since the whole release management is updated, we kick-off with a new version `v1.0.0`
+
+### 🚀 Features
+
+- add `lefthook`, `git-lfs` and make sure `java` is installed correctly
+- install `ripgrep` in `devcontainer` stage
+
 ## 1.0.0 (2024-09-14)
 
 ### ❗️ Breaking Changes ❗
