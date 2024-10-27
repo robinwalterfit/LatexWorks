@@ -38,4 +38,4 @@ jobs:
         id: ml
         uses: oxsecurity/megalinter/flavors/ci_light@v8
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
