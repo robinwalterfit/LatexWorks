@@ -167,7 +167,7 @@ All build commands follow this scheme:
 docker buildx build \
     --build-arg CREATED=$(date -u +"%Y-%m-%dT%H:%M:%SZ") \
     --build-arg FEDORA_VERSION=40 \  # Optional
-    --build-arg REVISION=$(git log -n 1 --format=%H) \
+    --build-arg REVISION=$(git log --max-count 1 --format=%H) \
     --build-arg TEXLIVE=texlive-scheme-<scheme> \
     --build-arg VERSION=<project-version> \
     --target latexworks \  # Comes before the `devcontainer` stage, so make sure to add this target!
@@ -247,12 +247,11 @@ put your code into `/workspace` inside the container.
 
 ```bash
 docker buildx build \
+    --build-arg COCOGITTO_VERSION='6.3.0' \  # Optional
     --build-arg CREATED=$(date -u +"%Y-%m-%dT%H:%M:%SZ") \
     --build-arg FEDORA_VERSION=40 \  # Optional
     --build-arg HADOLINT_VERSION=2.12.0 \  # Optional
     --build-arg LTEX_LS_VERSION=15.2.0 \  # Optional
-    --build-arg PYENV_VERSION=2.3.24 \  # Optional
-    --build-arg PYTHON_VERSION=3.10.6 \  # Optional
     --build-arg REVISION=$(git log -n 1 --format=%H) \
     --build-arg TEXLIVE=texlive-scheme-<scheme> \
     --build-arg USER_GID="$(id -g)" \

@@ -42,7 +42,7 @@ indent_style = space
 trim_trailing_whitespace = false
 
 # Python specific file configuration
-[*.{ipynb,py}]
+[*.{ipynb,py,pyi}]
 indent_size = 4
 indent_style = space
 

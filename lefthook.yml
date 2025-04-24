@@ -15,6 +15,9 @@ output:
   - skips           # Print "skip" (i.e. no files matched)
 source_dir: .lefthook/
 
+# NOTE on globs:
+# The glob attribute is only used if file templates are used, so we let git check if the file was changed
+
 # Command groups
 lint:
   commands:
@@ -30,6 +33,12 @@ lint:
 #   commands: {}
 
 # Hooks
+commit-msg:
+  commands:
+    cog-verify:
+      run: cog verify --file {1}
+  parallel: true
+
 pre-commit:
   commands:
     1_lint:
@@ -38,3 +47,9 @@ pre-commit:
   #   run: lefthook run format
   #   stage_fixed: true
   piped: true
+
+pre-push:
+  commands:
+    cog-check:
+      run: cog check
+  parallel: true
