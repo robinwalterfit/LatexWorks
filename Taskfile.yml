@@ -9,9 +9,14 @@ vars:
   NAME: latexworks
   ORG: robinwalterfit
   REVISION:
-    sh: git log -n 1 --pretty=format:%H
+    sh: git log --max-count 1 --pretty=format:%H
   VERSION:
-    sh: knope get-version
+    sh: cog --quiet get-version
+
+includes:
+  local:
+    optional: true
+    taskfile: ./Taskfile.custom.yml
 
 tasks:
   build:
@@ -22,7 +27,7 @@ tasks:
 
       The Docker Image will be built with Buildkit. However, for performance reasons this task will
       only build the image for the current platform. This image will only be tagged with the user /
-      organisation identifier and the image name. The tag will be `local`.
+      organization identifier and the image name. The tag will be `local`.
     deps: []
     cmds:
       - |
@@ -46,7 +51,7 @@ tasks:
 
       The Docker Image will be built with Buildkit. However, for performance reasons this task will
       only build the image for the current platform. This image will only be tagged with the user /
-      organisation identifier and the image name. The tag will be `local`.
+      organization identifier and the image name. The tag will be `local`.
     cmds:
       - task: build
         vars:
@@ -60,7 +65,7 @@ tasks:
 
       The Docker Image will be built with Buildkit. However, for performance reasons this task will
       only build the image for the current platform. This image will only be tagged with the user /
-      organisation identifier and the image name. The tag will be `local`.
+      organization identifier and the image name. The tag will be `local`.
     cmds:
       - task: build
         vars:
@@ -74,7 +79,7 @@ tasks:
 
       The Docker Image will be built with Buildkit. However, for performance reasons this task will
       only build the image for the current platform. This image will only be tagged with the user /
-      organisation identifier and the image name. The tag will be `local`.
+      organization identifier and the image name. The tag will be `local`.
     cmds:
       - task: build
         vars:
@@ -88,7 +93,7 @@ tasks:
 
       The Docker Image will be built with Buildkit. However, for performance reasons this task will
       only build the image for the current platform. This image will only be tagged with the user /
-      organisation identifier and the image name. The tag will be `local`.
+      organization identifier and the image name. The tag will be `local`.
     cmds:
       - task: build
         vars:
@@ -102,7 +107,7 @@ tasks:
 
       The Docker Image will be built with Buildkit. However, for performance reasons this task will
       only build the image for the current platform. This image will only be tagged with the user /
-      organisation identifier and the image name. The tag will be `local`.
+      organization identifier and the image name. The tag will be `local`.
     cmds:
       - task: build
         vars:
@@ -116,7 +121,7 @@ tasks:
 
       The Docker Image will be built with Buildkit. However, for performance reasons this task will
       only build the image for the current platform. This image will only be tagged with the user /
-      organisation identifier and the image name. The tag will be `local`.
+      organization identifier and the image name. The tag will be `local`.
     cmds:
       - task: build
         vars:
@@ -130,7 +135,7 @@ tasks:
 
       The Docker Image will be built with Buildkit. However, for performance reasons this task will
       only build the image for the current platform. This image will only be tagged with the user /
-      organisation identifier and the image name. The tag will be `local`.
+      organization identifier and the image name. The tag will be `local`.
     cmds:
       - task: build
         vars:
@@ -144,7 +149,7 @@ tasks:
 
       The Docker Image will be built with Buildkit. However, for performance reasons this task will
       only build the image for the current platform. This image will only be tagged with the user /
-      organisation identifier and the image name. The tag will be `local`.
+      organization identifier and the image name. The tag will be `local`.
     cmds:
       - task: build
         vars:
@@ -158,7 +163,7 @@ tasks:
 
       The Docker Image will be built with Buildkit. However, for performance reasons this task will
       only build the image for the current platform. This image will only be tagged with the user /
-      organisation identifier and the image name. The tag will be `local`.
+      organization identifier and the image name. The tag will be `local`.
 
       The target will be the `devcontainer` stage. This image will be optimized for the usage with a
       Dev Container.
@@ -170,8 +175,6 @@ tasks:
           --build-arg FEDORA_VERSION="{{.FEDORA_VERSION}}" \
           --build-arg HADOLINT_VERSION="{{.HADOLINT_VERSION}}" \
           --build-arg LTEX_LS_VERSION="{{.LTEX_LS_VERSION}}" \
-          --build-arg PYENV_VERSION="{{.PYENV_VERSION}}" \
-          --build-arg PYTHON_VERSION="{{.PYTHON_VERSION}}" \
           --build-arg REVISION="{{.REVISION}}" \
           --build-arg TEXLIVE="texlive-scheme-{{.SCHEME}}" \
           --build-arg VERSION="{{.VERSION}}" \
@@ -182,8 +185,6 @@ tasks:
       FEDORA_VERSION: 40
       HADOLINT_VERSION: 2.12.0
       LTEX_LS_VERSION: 15.2.0
-      PYENV_VERSION: 2.3.24
-      PYTHON_VERSION: 3.10.6
       USER_GID:
         sh: id -g
       USER_UID:
@@ -199,7 +200,7 @@ tasks:
 
       The Docker Image will be built with Buildkit. However, for performance reasons this task will
       only build the image for the current platform. This image will only be tagged with the user /
-      organisation identifier and the image name. The tag will be `local`.
+      organization identifier and the image name. The tag will be `local`.
 
       The target will be the `devcontainer` stage. This image will be optimized for the usage with a
       Dev Container.
@@ -216,7 +217,7 @@ tasks:
 
       The Docker Image will be built with Buildkit. However, for performance reasons this task will
       only build the image for the current platform. This image will only be tagged with the user /
-      organisation identifier and the image name. The tag will be `local`.
+      organization identifier and the image name. The tag will be `local`.
 
       The target will be the `devcontainer` stage. This image will be optimized for the usage with a
       Dev Container.
@@ -233,7 +234,7 @@ tasks:
 
       The Docker Image will be built with Buildkit. However, for performance reasons this task will
       only build the image for the current platform. This image will only be tagged with the user /
-      organisation identifier and the image name. The tag will be `local`.
+      organization identifier and the image name. The tag will be `local`.
 
       The target will be the `devcontainer` stage. This image will be optimized for the usage with a
       Dev Container.
@@ -250,7 +251,7 @@ tasks:
 
       The Docker Image will be built with Buildkit. However, for performance reasons this task will
       only build the image for the current platform. This image will only be tagged with the user /
-      organisation identifier and the image name. The tag will be `local`.
+      organization identifier and the image name. The tag will be `local`.
 
       The target will be the `devcontainer` stage. This image will be optimized for the usage with a
       Dev Container.
@@ -267,7 +268,7 @@ tasks:
 
       The Docker Image will be built with Buildkit. However, for performance reasons this task will
       only build the image for the current platform. This image will only be tagged with the user /
-      organisation identifier and the image name. The tag will be `local`.
+      organization identifier and the image name. The tag will be `local`.
 
       The target will be the `devcontainer` stage. This image will be optimized for the usage with a
       Dev Container.
@@ -284,7 +285,7 @@ tasks:
 
       The Docker Image will be built with Buildkit. However, for performance reasons this task will
       only build the image for the current platform. This image will only be tagged with the user /
-      organisation identifier and the image name. The tag will be `local`.
+      organization identifier and the image name. The tag will be `local`.
 
       The target will be the `devcontainer` stage. This image will be optimized for the usage with a
       Dev Container.
@@ -301,7 +302,7 @@ tasks:
 
       The Docker Image will be built with Buildkit. However, for performance reasons this task will
       only build the image for the current platform. This image will only be tagged with the user /
-      organisation identifier and the image name. The tag will be `local`.
+      organization identifier and the image name. The tag will be `local`.
 
       The target will be the `devcontainer` stage. This image will be optimized for the usage with a
       Dev Container.
@@ -318,7 +319,7 @@ tasks:
 
       The Docker Image will be built with Buildkit. However, for performance reasons this task will
       only build the image for the current platform. This image will only be tagged with the user /
-      organisation identifier and the image name. The tag will be `local`.
+      organization identifier and the image name. The tag will be `local`.
 
       The target will be the `devcontainer` stage. This image will be optimized for the usage with a
       Dev Container.
@@ -326,29 +327,6 @@ tasks:
       - task: build-devcontainer
         vars:
           SCHEME: tetex
-
-  changelog-entry:
-    desc: Print the latest changelog entry
-    summary: |
-      Print the latest changelog entry
-
-      This task will invoke `knope`. It will parse the changelog and print the entry of the
-      latest version to the console.
-    deps: []
-    cmds:
-      - knope changelog-entry
-
-  document-change:
-    desc: Invokes `knope` to document a change
-    summary: |
-      Invokes `knope` to document a change.
-
-      This task will invoke `knope`. It can be used to document a change with changesets instead of
-      conventional commits.
-    interactive: true
-    deps: []
-    cmds:
-      - knope changelog-entry
 
   mega-linter:
     desc: Run mega linter
@@ -361,12 +339,24 @@ tasks:
     cmds:
       - npx mega-linter-runner --flavor ci_light
 
+  pr-changelog:
+    desc: Print the changelog entries for an upcoming release
+    summary: |
+      Print the changelog entries for an upcoming release to the console.
+
+      Release management is handled by `cocogitto`. Whenever a new release is ready to be prepared,
+      `cocogitto` creates a release branch and a new Pull Request can be started. This task can be
+      used to get the changelog entries for the new version to describe the PR.
+    deps: []
+    cmds:
+      - cog changelog HEAD..v{{.VERSION}}
+
   version:
     desc: Prints the project version
     summary: |
       Prints the project version.
 
-      This task invokes `knope` to retrieve the current project version and prints it to the
+      This task invokes `cocogitto` to retrieve the current project version and prints it to the
       console.
     deps: []
     cmds:
