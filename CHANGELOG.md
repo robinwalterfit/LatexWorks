@@ -8,6 +8,26 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 - - -
 
+## [v2.0.0](https://github.com/robinwalterfit/LatexWorks/compare/2c4a917bc5a8fe53f23c40128b5246b26d489e79...v2.0.0) - 2025-04-24
+
+### Changed
+
+#### CHANGELOG
+
+- update the changelog based on `cocogitto` changelog generation - ([ec4cd8c](https://github.com/robinwalterfit/LatexWorks/commit/ec4cd8ca31b7cccd4b0f26c347bc1522ad55f6d4)), by [@robinwalterfit](https://github.com/robinwalterfit)
+
+#### README
+
+- update Docker image build instructions according to the changes of the `Dockerfile` - ([0a89cd5](https://github.com/robinwalterfit/LatexWorks/commit/0a89cd552efc6426d22ccf41f87554444a704910)), by [@robinwalterfit](https://github.com/robinwalterfit)
+
+### Added
+
+#### devcontainer
+
+- **BREAKING CHANGE**: switch from `poetry` to `uv` to handle python dependencies as well as python interpreter versions' - ([0b79753](https://github.com/robinwalterfit/LatexWorks/commit/0b7975313b40f7c13a62b92ce9922dda1f82477b)), by [@robinwalterfit](https://github.com/robinwalterfit)
+
+- - -
+
 ## [v1.1.0](https://github.com/robinwalterfit/LatexWorks/compare/7b6b3f83b12da077bfd3781988454656a89a8a14...v1.1.0) - 2024-10-27
 
 ### Added
